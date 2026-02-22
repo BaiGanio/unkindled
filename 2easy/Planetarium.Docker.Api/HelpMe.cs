@@ -1,13 +1,13 @@
-using Microsoft.Data.SqlClient;
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.Json;
+using Microsoft.EntityFrameworkCore;
 
 public static class HelpMe
 {
-    public static async Task SeedPlanetsAsync(PlanetsDbContext db)
+    public static async Task SeedPlanetsAsync(PlanetariumDbContext db)
     {
-        var jsonPath = Path.Combine(AppContext.BaseDirectory, "Data", "planets.json");
+        var jsonPath = Path.Combine(AppContext.BaseDirectory, "planets.json");
         var json = await File.ReadAllTextAsync(jsonPath);
 
         // Compute hash of JSON
@@ -33,11 +33,12 @@ public static class HelpMe
 
         // Update seed state
         if (state == null)
-            db.SeedState.Add(new SeedState { JsonHash = hash });
+            db.SeedState.Add(new SeedState(hash));
         else
             state.JsonHash = hash;
 
         await db.SaveChangesAsync();
     }
-
 }
+
+

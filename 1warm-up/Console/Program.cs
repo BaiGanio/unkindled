@@ -1,10 +1,5 @@
-﻿using System.Text.Json;
+﻿Console.WriteLine(new string('-', 116));
 
-string json = File.ReadAllText("planets.json");
-List<Planet>? planets = JsonSerializer.Deserialize<List<Planet>>(json);
-
-Console.WriteLine(new string('-', 116));
-// Column headers
 Console.WriteLine(
     $"{ "ID",-4}  " +
     $"{ "Name",-10}  " +
@@ -19,7 +14,7 @@ Console.WriteLine(
 
 Console.WriteLine(new string('-', 116));
 
-foreach (var p in planets)
+foreach (var p in HelpMe.ReadPlanets())
 {
     HelpMe.TextColorizer(
         $"{p.PlanetID,-4}  " +
@@ -33,5 +28,6 @@ foreach (var p in planets)
         $"{(p.DiscoveryYear?.ToString() ?? "----"),-6}"
     );
 }
+
 Console.WriteLine(new string('-', 116));
 

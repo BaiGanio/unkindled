@@ -35,7 +35,7 @@ services:
 
         echo 'Database Planets not found. Running initialization scripts...';
         for f in /sql/*.sql; do
-          echo \"Running $$f\";
+          echo \"Running $f\";
           /opt/mssql-tools/bin/sqlcmd -S mighty-mssql-server -U sa -P 'P@ssw0rd' -i \"$$f\" -C;
         done
       "
