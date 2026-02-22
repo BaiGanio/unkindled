@@ -39,6 +39,6 @@ services:
           /opt/mssql-tools/bin/sqlcmd -S mighty-mssql-server -U sa -P 'P@ssw0rd' -i \"$$f\" -C;
         done
       "
-
+      
 volumes: 
   mssql_data:
