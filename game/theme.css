@@ -1,0 +1,40 @@
+/* --- THEME VARIABLES --- */
+:root[data-bs-theme="dark"] {
+    --ds-bg: #0a0a0a;
+    --ds-sidebar: #0f0f0f; /* Near black sidebar */
+    --ds-text: #d1d1d1;
+    --ds-gold: #c2a15e;
+    --ds-border: rgba(194, 161, 94, 0.2);
+}
+
+:root[data-bs-theme="light"] {
+    --ds-bg: #fdfaf3;      /* Parchment White */
+    --ds-sidebar: #eee8d5;  /* Slightly darker paper color for sidebar */
+    --ds-text: #2c2c2c;     /* Dark ink color */
+    --ds-gold: #8a6d3b;     /* Bronzed gold for readability */
+    --ds-border: rgba(0, 0, 0, 0.1);
+}
+
+/* --- LAYOUT FIXES --- */
+#sidebar {
+    background-color: var(--ds-sidebar) !important; /* Forces the variable color */
+    border-right: 1px solid var(--ds-border);
+    transition: background-color 0.5s ease, border-color 0.5s ease;
+}
+
+#content {
+    background: var(--ds-bg); /* Use solid color or the radial gradient variable */
+    color: var(--ds-text);
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.nav-link {
+    color: var(--ds-text);
+    opacity: 0.7;
+    transition: 0.3s;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--ds-gold) !important;
+    opacity: 1;
+}

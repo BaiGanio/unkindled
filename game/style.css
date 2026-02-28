@@ -1,0 +1,178 @@
+
+body {
+    background-color: var(--ds-bg);
+    color: var(--ds-text);
+    transition: background-color 0.8s ease, color 0.8s ease;
+    font-family: 'Cinzel', serif;
+    overflow-x: hidden;
+}
+
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    min-height: 100vh;
+    transition: all 0.3s;
+    display: flex;
+    flex-direction: column;
+} 
+
+.sidebar-header {
+    padding: 20px;
+    font-family: 'Cinzel', serif;
+    color: var(--ds-gold);
+    border-bottom: 1px solid var(--ds-border);
+    text-align: center;
+}
+
+.nav-link {
+    color: #888;
+    padding: 15px 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    font-family: 'Cinzel', serif;
+    letter-spacing: 1px;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--ds-gold);
+    background: rgba(194, 161, 94, 0.05);
+    border-left: 3px solid var(--ds-gold);
+}
+
+.intro-title {
+ 
+    font-size: 3.5rem;
+    text-shadow: 0 0 10px rgba(194, 161, 94, 0.5);
+    margin-bottom: 30px;
+}
+.intro-title, .nav-link:hover, .nav-link.active {
+    color: var(--ds-gold);
+}
+
+/* Ensure the wrapper takes full height and prevents wrapping */
+.d-flex {
+    display: flex;
+    flex-wrap: nowrap; /* Prevents the 'falling down' effect */
+    min-height: 100vh;
+    width: 100%;
+}
+
+#sidebar {
+    width: 250px;
+    flex-shrink: 0; 
+    z-index: 100;
+}
+
+#content {
+    flex-grow: 1; 
+    width: 100%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Optional: Add a subtle 'fog' overlay to the content background */
+#content::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: url('https://www.transparenttextures.com');
+    opacity: 0.05;
+    pointer-events: none;
+}
+
+.ds-divider {
+    height: 2px;
+    background: linear-gradient(to right, transparent, var(--ds-gold), transparent);
+    margin: 40px 0;
+}
+
+.ds-button {
+    border: 1px solid var(--ds-gold);
+    background: transparent;
+    color: var(--ds-gold);
+    font-family: 'Cinzel', serif;
+    padding: 10px 30px;
+    transition: 0.3s;
+}
+
+.ds-button:hover {
+    background: var(--ds-gold);
+    color: black;
+    box-shadow: 0 0 15px var(--ds-gold);
+}
+.ds-button.lit {
+    color: #ff4500;
+    border-color: #ff4500;
+    text-shadow: 0 0 10px #ff4500;
+}
+
+
+/* Animation for the entire page body */
+body {
+    animation: ds-fade-in 2.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Specifically for the main content to give it a layered entry */
+#content {
+    animation: ds-slide-up 3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes ds-fade-in {
+    0% {
+        opacity: 0;
+        background-color: #000;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes ds-slide-up {
+    0% {
+        opacity: 0;
+        transform: translateY(0);
+    }
+    30% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Optional: Add a flickering effect to the "Gold" elements like a bonfire */
+.ds-gold-glow {
+    animation: bonfire-flicker 2s infinite alternate;
+}
+
+@keyframes bonfire-flicker {
+    0% { text-shadow: 0 0 10px rgba(194, 161, 94, 0.4); }
+    100% { text-shadow: 0 0 20px rgba(194, 161, 94, 0.8), 0 0 30px rgba(194, 161, 94, 0.2); }
+}
+
+
+.pulse-icon {
+    display: inline-block; /* Required for transform to work */
+    color: var(--ds-gold);
+    animation: ds-pulse 3s infinite ease-in-out;
+}
+
+@keyframes ds-pulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.6;
+        filter: drop-shadow(0 0 2px var(--ds-gold));
+    }
+    50% {
+        transform: scale(1.6);
+        opacity: 1;
+        filter: drop-shadow(0 0 8px var(--ds-gold));
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0.6;
+        filter: drop-shadow(0 0 2px var(--ds-gold));
+    }
+}
