@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unkindled | Web Book</title>
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <!-- Google Fonts: Cinzel for headings, EB Garamond for text -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=EB+Garamond:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Link to your separate CSS file -->
+    <link rel="stylesheet" href="../../theme.css">
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="../../css/common.css">
+
+        <style>
+        /* Custom color helper */
+
+.page-number {
+    font-family: 'Cinzel', serif;
+    letter-spacing: 3px;
+   
+}
+
+/* Animation for entering the page */
+.fade-in-up {
+    animation: fadeInUp 1.5s ease forwards;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* --- PROFICIENT / PURPLE THEME --- */
+:root {
+    --ds-purple: #8a2be2;
+    --ds-purple-glow: rgba(138, 43, 226, 0.4);
+}
+
+.ds-purple-glow {
+    color: var(--ds-purple);
+    text-shadow: 0 0 15px var(--ds-purple-glow);
+}
+
+.ds-divider-purple {
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--ds-purple), transparent);
+    width: 60%;
+    margin: 15px auto;
+}
+
+/* Stats Bar Styling */
+.ds-stats-bar {
+    font-family: 'Cinzel', serif;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border: 1px solid var(--ds-border);
+    padding: 10px 30px;
+    background: rgba(0, 0, 0, 0.2);
+    display: inline-flex;
+}
+
+.ds-stats-bar span {
+    color: var(--ds-gold);
+    margin-right: 5px;
+}
+
+/* Locked / Construction Zone */
+.ds-construction-zone {
+    position: relative;
+    border: 1px dashed var(--ds-purple);
+    background: rgba(138, 43, 226, 0.03);
+    overflow: hidden;
+}
+
+/* Floating Fog Effect */
+.fog-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: url('https://www.transparenttextures.com');
+    opacity: 0.1;
+    animation: ds-fog-drift 20s linear infinite;
+    pointer-events: none;
+}
+
+.ds-locked-emblem {
+    font-size: 4rem;
+    color: var(--ds-purple);
+    opacity: 0.6;
+    animation: ds-pulse-purple 3s infinite ease-in-out;
+}
+
+.ds-tba-text {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    color: var(--ds-text);
+}
+
+/* Animations */
+@keyframes ds-fog-drift {
+    from { background-position: 0 0; }
+    to { background-position: 500px 500px; }
+}
+
+@keyframes ds-pulse-purple {
+    0%, 100% { transform: scale(1); opacity: 0.4; }
+    50% { transform: scale(1.1); opacity: 0.8; text-shadow: 0 0 20px var(--ds-purple); }
+}
+
+
+
+
+    </style>
+
+
+</head>
+<body>
+    <audio id="bg-music" loop>
+        <source src="sounds/music-file.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="d-flex">
+        <!-- Page Content -->
+       <div id="content" class="container py-5">
+    <!-- Header Section -->
+    <div class="text-center mb-5 fade-in-up">
+        <h1 class="intro-title ds-purple-glow mb-2">Proficient 🟣</h1>
+        <div class="ds-divider-purple"></div>
+        <h3 class="ds-subtitle">CHALLENGE V — The DLC you fear is coming</h3>
+    </div>
+
+    <!-- Status Bar (The 'Stats' look) -->
+    <div class="ds-stats-bar d-flex justify-content-center gap-4 mb-5">
+        <div class="stat-item"><span>State:</span> Move By Move ;/</div>
+        <div class="ds-v-divider"></div>
+        <div class="stat-item"><span>Rank:</span> King</div>
+        <div class="ds-v-divider"></div>
+        <div class="stat-item"><span>Power:</span> 4</div>
+    </div>
+
+    <!-- The 'Under Construction' Area -->
+    <div class="ds-construction-zone text-center py-5">
+        <div class="fog-overlay"></div>
+        
+        <div class="ds-locked-emblem mb-4">
+            <i class="bi bi-shield-lock"></i>
+        </div>
+
+        <p class="ds-tba-text">
+            // 𝗧𝗕𝗔… <br>
+            <span class="small opacity-75">A challenge so great it has not yet been forged in the kiln.</span>
+        </p>
+
+        <div class="ds-divider-short mt-5"></div>
+        
+        <!-- Back Link -->
+        <a href="../index.html" class="ds-button mt-4">Retreat to Safety</a>
+    </div>
+
+    <!-- Footer Page Number -->
+    <div class="text-center mt-5">
+        <p class="page-number">Page [01001001]</p>
+    </div>
+</div>
+
+
+    </div>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script> 
+    <script src="../../js/common.js"></script>
+    <script src="../../js/audio.js"></script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+
+/* Container: Centered and subtle */
+.ds-horizontal-nav {
+    border-top: 1px solid rgba(194, 161, 94, 0.2);
+    border-bottom: 1px solid rgba(194, 161, 94, 0.2);
+    background: linear-gradient(to right, transparent, rgba(0,0,0,0.4), transparent);
+    padding: 15px 0;
+}
+
+.ds-nav-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0; /* Gaps handled by dividers */
+}
+
+/* Links: Elegant and Spaced */
+.ds-nav-link {
+    font-family: 'Cinzel', serif;
+    font-size: 0.85rem;
+    color: #888;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 4px; /* Classic Souls look */
+    padding: 10px 25px;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+/* Hover: White glow and slight lift */
+.ds-nav-link:hover {
+    color: #fff;
+    text-shadow: 0 0 12px rgba(255, 255, 255, 0.6);
+    transform: translateY(-1px);
+}
+
+/* The Gold Underline on Hover */
+.ds-nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    width: 0;
+    height: 1px;
+    background: var(--ds-gold);
+    transition: all 0.4s ease;
+    transform: translateX(-50%);
+}
+
+.ds-nav-link:hover::after {
+    width: 40%;
+}
+
+/* Vertical Divider: Thin and ghostly */
+.ds-v-divider {
+    width: 1px;
+    height: 20px;
+    background: linear-gradient(to bottom, transparent, var(--ds-border), transparent);
+}
+
+/* External Link indicator */
+.ds-nav-link.external {
+    font-style: italic;
+    opacity: 0.6;
+}
