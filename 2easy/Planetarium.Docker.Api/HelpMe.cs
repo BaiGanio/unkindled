@@ -33,9 +33,10 @@ public static class HelpMe
 
         // Update seed state
         if (state == null)
-            db.SeedState.Add(new SeedState(hash));
+            db.SeedState.Add(new SeedState(hash, DateTime.Now));
         else
             state.JsonHash = hash;
+            state.DateCreated = DateTime.Now;
 
         await db.SaveChangesAsync();
     }

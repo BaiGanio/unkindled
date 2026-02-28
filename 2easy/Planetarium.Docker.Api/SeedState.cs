@@ -7,8 +7,10 @@ public class SeedState
     protected SeedState() { } 
 
     // 2. KEEP THIS: This is the one you use in your code
-    public SeedState(string hash)
+    public SeedState(string hash, DateTime date)
     {
         JsonHash = hash;
+        DateCreated = date;
     }
+    public DateTime DateCreated { get; set; }
 }
