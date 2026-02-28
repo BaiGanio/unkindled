@@ -1,3 +1,4 @@
+// ----- THEME SELECTOR ------ //
 const themeToggle = document.getElementById('theme-toggle');
 
 themeToggle.addEventListener('click', () => {
@@ -10,3 +11,4 @@ themeToggle.addEventListener('click', () => {
     // Update button text
     themeToggle.innerText = isDark ? "DARK" : "LIGHT";
 });
+// ----- THEME SELECTOR ------ //

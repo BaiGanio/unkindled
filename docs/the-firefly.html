@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unkindled | Web Book</title>
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <!-- Google Fonts: Cinzel for headings, EB Garamond for text -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=EB+Garamond:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Link to your separate CSS file -->
+    <link rel="stylesheet" href="theme.css">
+    <link rel="stylesheet" href="style.css">
+
+        <style>
+        /* Custom color helper */
+.color-gold { color: var(--ds-gold); }
+
+/* The 'Artifact' frame for images */
+.ds-asset-border {
+    border: 1px solid var(--ds-border);
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.03);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    transition: 0.5s ease;
+}
+
+.ds-asset-border:hover {
+    border-color: var(--ds-gold);
+    box-shadow: 0 0 30px rgba(194, 161, 94, 0.2);
+}
+
+/* Decorative dividers */
+.ds-divider-short {
+    width: 60px;
+    height: 2px;
+    background: var(--ds-gold);
+    margin: 30px auto;
+    opacity: 0.5;
+}
+
+.tiny-divider {
+    width: 30px;
+    height: 1px;
+    background: #444;
+    margin: 10px auto;
+}
+
+/* Typography for the lore */
+.lore-text-box p {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    text-align: justify;
+}
+
+.page-number {
+    font-family: 'Cinzel', serif;
+    letter-spacing: 3px;
+   
+}
+
+/* Animation for entering the page */
+.fade-in-up {
+    animation: fadeInUp 1.5s ease forwards;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+
+
+
+/* Container: Centered and subtle */
+.ds-horizontal-nav {
+    border-top: 1px solid rgba(194, 161, 94, 0.2);
+    border-bottom: 1px solid rgba(194, 161, 94, 0.2);
+    background: linear-gradient(to right, transparent, rgba(0,0,0,0.4), transparent);
+    padding: 15px 0;
+}
+
+.ds-nav-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0; /* Gaps handled by dividers */
+}
+
+/* Links: Elegant and Spaced */
+.ds-nav-link {
+    font-family: 'Cinzel', serif;
+    font-size: 0.85rem;
+    color: #888;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 4px; /* Classic Souls look */
+    padding: 10px 25px;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+/* Hover: White glow and slight lift */
+.ds-nav-link:hover {
+    color: #fff;
+    text-shadow: 0 0 12px rgba(255, 255, 255, 0.6);
+    transform: translateY(-1px);
+}
+
+/* The Gold Underline on Hover */
+.ds-nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    width: 0;
+    height: 1px;
+    background: var(--ds-gold);
+    transition: all 0.4s ease;
+    transform: translateX(-50%);
+}
+
+.ds-nav-link:hover::after {
+    width: 40%;
+}
+
+/* Vertical Divider: Thin and ghostly */
+.ds-v-divider {
+    width: 1px;
+    height: 20px;
+    background: linear-gradient(to bottom, transparent, var(--ds-border), transparent);
+}
+
+/* External Link indicator */
+.ds-nav-link.external {
+    font-style: italic;
+    opacity: 0.6;
+}
+
+
+    </style>
+
+
+</head>
+<body>
+    <!-- Place this anywhere in the body -->
+    
+    <audio id="bg-music" loop>
+        <source src="sounds/music-file.mp3" type="audio/mpeg">
+    </audio>
+    <div class="d-flex">
+
+
+        <!-- Page Content -->
+        <div id="content">
+            <nav class="ds-horizontal-nav mb-5">
+                <div class="ds-nav-container">
+                    <a href="index.html" class="ds-nav-link">Home</a>
+                    <div class="ds-v-divider"></div>
+                    <a href="#-The-Great-Library" class="ds-nav-link">Great Library</a>
+                    <div class="ds-v-divider"></div>
+                    <a href="#-hall-of-stargazers" class="ds-nav-link">Stargazers</a>
+                    <div class="ds-v-divider"></div>
+                    <a href="#-Hall-Of-The-FireKeepers" class="ds-nav-link">FireKeepers</a>
+                    <div class="ds-v-divider"></div>
+                    <a href="https://github.com" class="ds-nav-link external" target="_blank">The Gospel</a>
+                    <div class="ds-v-divider"></div>
+                    <a href="https://github.com" class="ds-nav-link external" target="_blank">ROOT</a>
+                </div>
+            </nav>
+
+            <div class="container py-5">
+                <!-- Header Section -->
+                <div class="text-center mb-5 fade-in-up">
+                    <h1 class="intro-title ds-gold-glow mb-0">The Tale Of The One & The Mighty</h1>
+                    <h2 class="h4 italic color-gold" style="font-family: 'Cinzel'; letter-spacing: 4px;">The First FireKeeper — The Firefly</h2>
+                    <div class="ds-divider"></div>
+                </div>
+
+                <div class="row gy-5 align-items-center">
+                    <!-- IMAGE COLUMN (Left) -->
+                    <div class="col-lg-5 text-center px-4">
+                        <div class="image-frame">
+                            <a href="https://raw.githubusercontent.com/BaiGanio/unkindled/master/files/images/john-doe.png" target="_blank">
+                                <img src="https://raw.githubusercontent.com/BaiGanio/unkindled/master/files/images/john-doe.png" 
+                                    alt="The Firefly" class="img-fluid ds-asset-border">
+                            </a>
+                            <div class="image-caption mt-3">
+                                <p class="mb-0 italic small">Artist's depiction of the First FireKeeper</p>
+                                <div class="tiny-divider"></div>
+                                <p class="text-muted extra-small">Based on TRUE astronomical<br> observations<br> & <br>calculations. <br> He-he ;/</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TEXT COLUMN (Right) -->
+                    <div class="col-lg-7 px-lg-5">
+                        <div class="lore-text-box">
+                            <p class="lead">In an age when the realms of <strong>.NET</strong>, <strong>Docker</strong>, and <strong>Kubernetes</strong> were but fractured lands of chaos, there rose a lone warrior known only as <span class="color-gold">The Firefly</span> — the First FireKeeper.</p>
+                            
+                            <p>His flame was small, yet unyielding, a spark that refused to fade even as the void swallowed entire systems. He wandered the broken libraries of .NET, binding ancient assemblies with light, so others could walk the path unscathed.</p>
+
+                            <p>He crossed the storm‑ridden seas of Docker, forging vessels from raw ether, teaching mortals how to imprison their creations in shells of iron, isolation and orchestration.</p>
+
+                            <p>And in the mist‑shrouded valleys of Kubernetes, he tamed the restless spirits of countless containers, commanding them to march as one.</p>
+                            
+                            <div class="ds-divider-short"></div>
+
+                            <p class="italic text-center mt-4">"Where the path was dark, he burned brighter. <br> Where the void whispered, he answered with flame."</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer Navigation -->
+                <div class="mt-5 pt-5 text-center">
+                    <div class="ds-divider"></div>
+                    <p class="page-number">Page [100]</p>
+                    <a href="index.html" class="ds-button mt-3">Return to Bonfire</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script> 
+    <script src="js/common.js"></script>
+    <script src="js/audio.js"></script>
+</body>
+</html>

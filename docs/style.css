@@ -176,3 +176,70 @@ body {
         filter: drop-shadow(0 0 2px var(--ds-gold));
     }
 }
+
+
+
+
+
+
+
+
+.enter-realm-container {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.enter-realm-container:hover {
+    transform: scale(1.05);
+}
+
+.enter-link {
+    font-family: 'Cinzel', serif;
+    font-size: 2.8rem;
+    color: var(--ds-gold);
+    text-decoration: none;
+    letter-spacing: 8px; /* Classic Souls title spacing */
+    display: block;
+    transition: 0.5s;
+}
+
+.enter-link:hover {
+    color: #fff;
+    text-shadow: 0 0 15px var(--ds-gold);
+}
+
+.pulsing-text {
+    animation: text-glow 4s infinite ease-in-out;
+}
+
+.sub-prompt {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.2rem;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-top: 10px;
+    opacity: 0.8;
+}
+
+@keyframes text-glow {
+    0%, 100% { opacity: 0.4; text-shadow: 0 0 5px transparent; }
+    50% { opacity: 1; text-shadow: 0 0 20px var(--ds-gold); }
+}
+
+
+
+
+.ds-skull-img {
+    width: 80px;
+    height: 80px;
+    filter: drop-shadow(0 0 5px var(--ds-gold));
+    transition: 0.5s ease;
+    opacity: 0.8;
+}
+
+.enter-realm-container:hover .ds-skull-img {
+    transform: scale(1.1);
+    opacity: 1;
+    filter: drop-shadow(0 0 15px var(--ds-gold));
+}

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Archives | A Dark Souls Web Book</title>
+    <title>Unkindled | Web Book</title>
     <!-- Bootstrap 5.3 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
@@ -17,26 +17,28 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Place this anywhere in the body -->
     <audio id="bg-music" loop>
-        <source src="music-file.mp3" type="audio/mpeg">
+        <source src="sounds/music-file.mp3" type="audio/mpeg">
     </audio>
+
     <div class="d-flex">
         <!-- Sidebar -->
         <nav id="sidebar" class="d-flex flex-column">
             <div class="sidebar-header">
-                <h3>THE ARCHIVES</h3>
+                <h3>UNKINDLED</h3>
             </div>
             
             <!-- This list stays at the top -->
-            <ul class="nav flex-column">
+            <ul class="nav flex-column text-center">
                 <li class="nav-item"><a href="#" class="nav-link active">I. Introduction</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">II. The First Flame</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">III. Lordran's Legacy</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">IV. Abyss Walkers</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">V. Cursed Undead</a></li>
+                <li class="nav-item"><a href="the-firefly.html" class="nav-link">III. Firefly's Legacy</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">IV. The Abyss Walkers</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">V. How to play?</a></li>
+                <li class="nav-item"><a href="#" class="nav-link text-center">Hall Of The FireKeepers</a></li>
+                <li class="nav-item"><a href="#" class="nav-link text-center">Community</a></li>
             </ul>
-
+            
             <!-- mt-auto pushes this entire div to the bottom -->
             <div class="mt-auto border-top border-secondary p-3">
                 <div class="text-center mb-2">
@@ -57,54 +59,21 @@
             <div class="container py-5">
                 <h1 class="intro-title ds-gold-glow">Welcome, Unkindled one!</h1>
                 <div class="ds-divider"></div>
-                <h3 class="italic mb-5">Here, among clusters and containers, you shall trace the paths of those who came before You.</h3>
-                
-                <!-- <div class="row justify-content-center mt-5">
-                    <div class="col-md-8 text-start">
-                        <p>Welcome to this digital chronicle. Use the sidebar to navigate the forbidden knowledge of the cycles. Each chapter uncovers a new fragment of the lore, bound in the style of the old world.</p>
-                       
-                    </div>
-                </div> -->
+                <h4 class="italic mb-5">Here, among clusters and containers, you shall trace the paths of those who came before You.</h4>
+                <div class="enter-realm-container mt-3">
+                    <a href="chapter2.html" class="enter-link">
+                        <span class="pulsing-text">ENTER THE REALM</span>
+                        <div class="sub-prompt">Click to begin</div>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
 
     <!-- Bootstrap 5 JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        const music = document.getElementById('bg-music');
-        const btn = document.getElementById('bonfire-btn');
-
-        btn.addEventListener('click', () => {
-            if (music.paused) {
-                if (music.currentTime === 0) {
-                    music.currentTime = 22;
-                }
-                music.volume = 0;
-                music.play();
-                
-                // Dark Souls style slow volume fade-in
-                let vol = 0;
-                const fadeIn = setInterval(() => {
-                    if (vol < 0.3) { // Keep it low/ambient
-                        vol += 0.01;
-                        music.volume = vol;
-                    } else {
-                        clearInterval(fadeIn);
-                    }
-                }, 100);
-
-                btn.innerHTML = "<i class=\"bi bi-soundwave pulse-icon\"></i>";
-                btn.style.boxShadow = "0 0 20px #ff4500"; // Orange glow when active
-            } else {
-                // Toggle off logic (Pause/Fade out)
-                music.pause();
-                btn.innerHTML = "<i class=\"bi bi-play\">";
-                btn.classList.remove('lit');
-            }
-        });
-
-    </script>
-    <script src="toggle.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/audio.js"></script>
 </body>
 </html>
