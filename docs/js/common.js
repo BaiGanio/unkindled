@@ -1,5 +1,5 @@
 // ----- CLICK AUDIO OBJECT ------ //
-const clickSound = new Audio('sounds/click1.mp3'); 
+const clickSound = new Audio('./sounds/click1.mp3'); 
 clickSound.volume = 0.5; // Keep it subtle
 
 // 2. Select all navigation links
